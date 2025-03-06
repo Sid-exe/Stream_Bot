@@ -2,9 +2,9 @@ import PromptSuggestionButton from "./PromptSuggestionButton";
 
 const PromptSuggestionRow = ({ onPromptClick }) => {
   const prompts = [
-    "What is Stream Ecosystem?",
+    "What is STREAM Ecosystem?",
     "What is Learning Management System?",
-    "How do I submit a Project idea?",
+    "How can I submit a Project idea?",
     "Are Courses free in LMS?",
   ];
   return (

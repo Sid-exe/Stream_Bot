@@ -39,8 +39,8 @@ const Home = () => {
         {noMessages ? (
           <>
             <p className="starter-text">
-              Welcome to the Stream Ecosystem ! I am a Chatbot designed to help
-              you with your queries. Feel free to ask me some general questions
+              <span>Welcome to the Stream Ecosystem ! I am a Chatbot designed to help
+              you with your queries.</span><br/><br/> Feel free to ask me some general questions
               as well as some specific ones. Use the Learning Management System
               and Project Based Learning to expand your knowledge.
             </p>
@@ -57,13 +57,10 @@ const Home = () => {
         )}
       </section>
       <form onSubmit={handleSubmit}>
-        <input
-          className="question-box"
-          onChange={handleInputChange}
-          value={input}
-          placeholder="Ask me something..."
-        />
-        <input type="submit" />
+        <input className="question-box" onChange={handleInputChange}  value={input} placeholder="Ask me something..."/>  
+        <button type="submit" className="send-button" aria-label="Send message">
+          <i className="fas fa-paper-plane"></i>
+        </button>
       </form>
     </main>
   );

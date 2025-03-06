@@ -42,56 +42,96 @@ section.populated {
 
 .starter-text{
     padding: 0 80px;
+    font-size: 16px;
+    color: #000000ac;
 }
 
-form{
-    height: 50px;
+.starter-text span{
+    font-size: 18px;
+    color: #000000;
+}
+
+form {
+    height: 60px;
     width: 100%;
     display: flex;
+    align-items: center; /* This centers items vertically */
+    justify-content: center;
     border-top: #10060600 solid 2px;
     padding-top: 20px;
     border-radius: 0 0 10px 10px;
-    overflow: hidden;   
-}
+    overflow: hidden;
+  }
 
 input.question-box{
     width:85%;
     padding: 10px;
-    font-size: 15px;
+    font-size: 14px;
     color: #383838;
     border: none;
+    border-radius: 10px;
 }
 
-input[type="submit"] {
+/* input[type="submit"] {
     background-image: url('/assets/send_button.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain; /* Ensures the whole image fits */
+    background-size: contain; Ensures the whole image fits
     
     width: 2px;
-    min-width: 100px; /* Prevents it from becoming too small */
-    height: 50px; /* Adjust this based on your design */
+    min-width: 100px; Prevents it from becoming too small
+    height: 50px; Adjust this based on your design
     
     padding: 2px;
     font-size: 15px;
     border: none;
     color: #fff;
-    background-color: transparent; /* Makes the background image visible */
+    background-color: transparent; Makes the background image visible
     cursor: pointer;
 
-    font-size: 0; /* Hides text */
-    color: transparent; /* Ensures no text is visible */
-}
+    font-size: 0; Hides text
+    color: transparent; Ensures no text is visible
+} */
 
-input[type="submit"]:hover {
-    background-color: transparent; /* Keeps the background image visible */
-    transform: scale(1.05); /* Slightly enlarges the button */
-}
+/* input[type="submit"]:hover {
+    background-color: transparent; Keeps the background image visible
+    transform: scale(1.05); Slightly enlarges the button
+} */
 
 
-input:focus{
+/* input:focus{
     outline: none;
-}
+} */
+
+.send-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin-left: 8px;
+    border-radius: 50%;
+    background-color: #f1c40f; /* You can change this color to match your design */
+    transition: background-color 0.2s;
+  }
+  
+  .send-button:hover {
+    background-color: #ffffff; 
+    transform: scale(1.05);
+  }
+
+  .send-button:hover i {
+    color: #f1c40f; /* Green triangle on hover */
+  }
+
+  i{
+    color: #fff;
+  }
+
 
 .bubble{
     margin: 8px;
@@ -117,6 +157,7 @@ input:focus{
 
 .prompt-suggestion-row{
     width: 100%;
+    
 }
 
 .prompt-suggestion-button {
@@ -128,11 +169,12 @@ input:focus{
     border-radius: 10px;
     color: #383838;
     box-shadow: #959da533 0 8px 24px;
+    cursor: pointer;
 }
 
 
 .prompt-suggestion-button:hover {
-    background-color: #d4ac0d; 
+    background-color: #f1c40f; 
     transform: scale(1.05);
 }
 
