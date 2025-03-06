@@ -1,40 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# STREAMBot Chatbot
+
+This is a Next.js project for the **STREAMBot Chatbot**, designed to provide intelligent responses based on website documentation.
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the Repository
+
+First, clone the repository to your local system:
+
+```bash
+git clone <repository-url>
+cd streambot-chatbot
+```
+
+### 2. Install Dependencies
+
+Run the following command to install the required dependencies:
+
+```bash
+npm install
+```
+
+> **Note:** The required dependencies are listed in `requirements.txt` for reference.
+
+### 3. Setup AstraDB and OpenAI Credentials
+
+You need an account on **DataStax AstraDB** to get the serverless vector database credentials. Similarly, you need an **OpenAI API key** for chatbot responses.
+
+1. Create an account on [DataStax AstraDB](https://www.datastax.com/products/datastax-astra)
+2. Obtain the **VectorDB credentials** and store them in a `.env` file.
+3. Obtain an **OpenAI API Key** from [OpenAI](https://openai.com/) and store it in `.env`.
+
+Example `.env` file:
+
+```env
+ASTRA_DB_NAMESPACE="default_keyspace"
+ASTRA_DB_COLLECTION="stream_gpt"
+ASTRA_DB_API_ENDPOINT=<your-api-endpoint>
+ASTRA_DB_APPLICATION_TOKEN=<your-application-token>
+OPENAI_API_KEY=<your-openai-api-key>
+```
+
+### 4. Store Website Data
+
+Place the **PDF file containing website documentation** inside the `pdfs/` folder. This document will be used to generate embeddings for the chatbot.
+
+### 5. Generate Embeddings
+
+Run the following command to process the PDF and store embeddings in the cloud database:
+
+```bash
+npm run seed
+```
+
+This command executes the `loadDB.ts` script, which:
+
+- Extracts content from the PDF file.
+- Generates vector embeddings using OpenAI.
+- Stores the embeddings in **AstraDB**.
+
+### 6. Start the Development Server
+
+Once embeddings are stored, start the chatbot by running:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the chatbot in action.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To understand the technologies used, check out these resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
+- [DataStax AstraDB](https://www.datastax.com/products/datastax-astra) - Learn about serverless vector databases.
+- [OpenAI API](https://openai.com/) - Learn how OpenAI API works.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+Now you’re all set to develop and test your **STREAMBot Chatbot** locally! 🚀
