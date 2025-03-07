@@ -29,18 +29,13 @@ const Home = () => {
 
   return (
     <main>
-      <Image
-        src="/assets/stream_logo.svg"
-        alt="Stream Logo"
-        width="206"
-        height="53"
+      <img src="/assets/stream_logo.svg" alt="Stream Logo"width="206" height="53"
       />
       <section className={noMessages ? "" : "populated"}>
         {noMessages ? (
           <>
             <p className="starter-text">
-              <span>Welcome to the Stream Ecosystem ! I am a Chatbot designed to help
-              you with your queries.</span><br/><br/> Feel free to ask me some general questions
+              <span>Welcome to the Stream Ecosystem Chatbot</span><br/><br/> Feel free to ask me some general questions
               as well as some specific ones. Use the Learning Management System
               and Project Based Learning to expand your knowledge.
             </p>

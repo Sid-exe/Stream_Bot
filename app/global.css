@@ -9,13 +9,16 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('/assets/background_green.avif');
+    background-image: url('/assets/bg_s_bot.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    
 }
 
 main{
     width: 80vw;
     height: 80vh;
-    background: linear-gradient(to bottom, #b4fb9a, #fafdb3);
+    background-color: #fbf3da;
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -23,6 +26,15 @@ main{
     justify-content: space-between;
     padding: 20px;
     text-align: center;
+
+    /* 3D effect additions */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img{
+    margin-top: 30px;
 }
 
 section{
@@ -44,15 +56,16 @@ section.populated {
     padding: 0 80px;
     font-size: 16px;
     color: #000000ac;
+    margin-top: -50px;
 }
 
 .starter-text span{
-    font-size: 18px;
+    font-size: 22px;
     color: #000000;
 }
 
 form {
-    height: 60px;
+    /* height: 60px; */
     width: 100%;
     display: flex;
     align-items: center; /* This centers items vertically */
@@ -65,11 +78,23 @@ form {
 
 input.question-box{
     width:85%;
-    padding: 10px;
+    padding: 14px;
     font-size: 14px;
     color: #383838;
     border: none;
     border-radius: 10px;
+
+    /* 3D effect additions */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+    
+}
+
+input.question-box:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.1);
+    outline: none;
 }
 
 /* input[type="submit"] {
@@ -110,13 +135,14 @@ input.question-box{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     padding: 0;
-    margin-left: 8px;
+    margin-left: 10px;
     border-radius: 50%;
     background-color: #f1c40f; /* You can change this color to match your design */
     transition: background-color 0.2s;
+    
   }
   
   .send-button:hover {
@@ -126,10 +152,12 @@ input.question-box{
 
   .send-button:hover i {
     color: #f1c40f; /* Green triangle on hover */
+    
   }
 
   i{
     color: #fff;
+    font-size: 16px;
   }
 
 
@@ -139,19 +167,20 @@ input.question-box{
     font-size: 15px;
     border: none;
     color:#383838;
-    box-shadow: #959da533 0 8px 24px;
+    /* box-shadow: #959da533 0 8px 24px; */
     width: 80%;
     text-align: left;
 }
 
 .bubble.user{
-    border-radius: 20px 20px 0 20px;
-    background-color: rgb(255, 255, 118); 
+    border-radius: 10px;
+    background-color: #f1c40f; 
+    padding: 10px;
     margin-left: auto;
 }
 
 .bubble.assistant{
-    border-radius: 20px 20px 20px 0;
+    border-radius: 10px;
     background-color: #82ff84;
 }
 
@@ -170,6 +199,11 @@ input.question-box{
     color: #383838;
     box-shadow: #959da533 0 8px 24px;
     cursor: pointer;
+
+    /* 3D effect additions */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
 }
 
 
