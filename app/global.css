@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Iansui&display=swap');
+
 *{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body{
@@ -54,14 +58,17 @@ section.populated {
 
 .starter-text{
     padding: 0 80px;
-    font-size: 16px;
+    font-size: 20px;
     color: #000000ac;
     margin-top: -50px;
+    font-family: "Iansui", cursive;
+    font-weight: 700;
 }
 
 .starter-text span{
     font-size: 22px;
     color: #000000;
+    font-family: "Iansui", cursive;
 }
 
 form {
@@ -83,6 +90,8 @@ input.question-box{
     color: #383838;
     border: none;
     border-radius: 10px;
+
+    font-family: "Iansui", cursive;
 
     /* 3D effect additions */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -177,11 +186,13 @@ input.question-box:focus {
     background-color: #f1c40f; 
     padding: 10px;
     margin-left: auto;
+    font-family: "Iansui", cursive;
 }
 
 .bubble.assistant{
     border-radius: 10px;
     background-color: #82ff84;
+    font-family: "Iansui", cursive;
 }
 
 .prompt-suggestion-row{
@@ -204,6 +215,8 @@ input.question-box:focus {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     transform: translateY(-2px);
     transition: all 0.2s ease;
+
+    font-family: "Iansui", cursive;
 }
 
 
