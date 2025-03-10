@@ -34,7 +34,8 @@ main{
 }
 
 img{
-    margin-top: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 section{
@@ -44,13 +45,28 @@ section{
 section.populated {
     flex-grow: 1; /* Allows it to expand within main */
     width: 100%; /* Ensures it takes full width */
-    overflow-y: auto; /* Enables vertical scrolling */
+    max-height: calc(80vh - 150px);
+    overflow-y:auto; /* Enables vertical scrolling */
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
+    padding-right: 10px; /* Adds space for scrollbar */
+    scroll-behavior: smooth;
 }
 
+/* Optional: Style scrollbar */
+section.populated::-webkit-scrollbar {
+    width: 6px; /* Slim scrollbar */
+}
 
+section.populated::-webkit-scrollbar-thumb {
+    background: #f1c40f; /* Scrollbar color */
+    border-radius: 10px;
+}
+
+section.populated::-webkit-scrollbar-track {
+    background: #fbf3da; /* Matches background */
+}
 
 .starter-text{
     padding: 0 80px;
@@ -177,11 +193,14 @@ input.question-box:focus {
     background-color: #f1c40f; 
     padding: 10px;
     margin-left: auto;
+    max-width: 50%;
+    max-width: fit-content;
+    word-wrap: break-word; /* Ensure text breaks properly */
 }
 
 .bubble.assistant{
     border-radius: 10px;
-    background-color: #82ff84;
+    background-color: #f1c40f;
 }
 
 .prompt-suggestion-row{
