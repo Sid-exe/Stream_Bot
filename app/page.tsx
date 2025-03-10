@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import { useEffect, useRef } from "react";
 import { useChat } from "@ai-sdk/react";
 import { Message } from "ai";
 import Bubble from "./components/Bubble";
@@ -17,6 +17,15 @@ const Home = () => {
   } = useChat();
 
   const noMessages = !messages || messages.length === 0;
+  const chatContainerRef = useRef(null);
+
+
+   // Scroll to the bottom when messages update
+   useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   const handlePrompt = (promptText) => {
     const msg: Message = {
@@ -31,7 +40,7 @@ const Home = () => {
     <main>
       <img src="/assets/stream_logo.svg" alt="Stream Logo"width="206" height="53"
       />
-      <section className={noMessages ? "" : "populated"}>
+      <section className={noMessages ? "" : "populated"} ref={chatContainerRef}>
         {noMessages ? (
           <>
             <p className="starter-text">
