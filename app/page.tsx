@@ -53,9 +53,28 @@ const Home = () => {
           </>
         ) : (
           <>
-            {messages.map((message, index) => (
+            {/* {messages.map((message, index) => (
               <Bubble key={`message-${index}`} message={message} />
-            ))}
+            ))} */}
+
+{messages.map((message, index) => (
+  <div
+    key={`message-${index}`}
+    className={`message-wrapper ${message.role === "user" ? "user" : "bot"}`}
+  >
+    <img
+      src={
+        message.role === "user"
+          ? "/assets/user_dp.jpg"  // Random DP for sender
+          : "/assets/bot_dp.png"                      // Static logo for bot
+      }
+      alt={message.role === "user" ? "User Profile" : "Bot Logo"}
+      className="profile-pic"
+    />
+    <Bubble message={message} />
+  </div>
+))}
+
             {isLoading && <LoadingBubble />}
           </>
         )}

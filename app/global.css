@@ -56,7 +56,6 @@ section.populated {
     display: flex;
     flex-direction: column;
     /* justify-content: flex-end; */
-    padding-right: 10px; /* Adds space for scrollbar */
     scroll-behavior:smooth;
 
     scrollbar-width: none; /* Hides scrollbar */
@@ -84,7 +83,7 @@ section.populated::-webkit-scrollbar-track {
 }
 
 .starter-text{
-    padding: 0 80px;
+    padding: 0 80px; 
     font-size: 20px;
     color: #000000ac;
     margin-top: -50px;
@@ -93,7 +92,7 @@ section.populated::-webkit-scrollbar-track {
 }
 
 .starter-text span{
-    font-size: 22px;
+    font-size: 24px;
     color: #000000;
     font-family: "Iansui", cursive;
 }
@@ -163,26 +162,47 @@ input.question-box:focus {
 
   i{
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
+    margin-right: 2px;
   }
 
+  .message-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px; /* Spacing between profile pic and bubble */
+    margin: 5px 20px;
+}
+
+.message-wrapper.user {
+    flex-direction: row-reverse; /* User messages on the right */
+    align-items: flex-start;
+}
+
+.profile-pic {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;  /* Circular profile pic */
+    object-fit: cover;   /* Ensures image scales correctly */
+
+    /* border: 1.5px solid #383838; */
+   
+}
 
 .bubble{
-    margin: 8px;
-    padding: 8px;
+    margin: 10px;
+    padding: 10px;
     font-size: 15px;
     border: none;
     color:#383838;
     box-shadow: #959da533 0 8px 24px;
-    width: 80%;
+    width: 75%;
     text-align: left;
 }
 
 .bubble.user{
     border-radius: 10px;
     background-color: #f1c40f; 
-    padding: 10px;
-    margin-right: 30px;
+    /* margin-right: 10px; */
     margin-left: auto;
     max-width: 50%;
     max-width: fit-content;
@@ -192,15 +212,16 @@ input.question-box:focus {
 
 .bubble.assistant{
     border-radius: 10px;
-    margin-left: 30px;
-    background-color: #f1c40f;
+    /* margin-left: 10px; */
+    background-color: #f9db80;
     font-family: "Iansui", cursive;
-    max-width: 75%;
+    max-width: 70%;
     max-width: fit-content;
 }
 
 .prompt-suggestion-row{
     width: 100%;
+    
     
 }
 
@@ -230,8 +251,8 @@ input.question-box:focus {
 }
 
 .loader{
-    margin-left: 30px;
-    width: 60px;
+    margin-left: 70px;
+    width: 50px;
     aspect-ratio: 4;
     background: no-repeat radial-gradient(circle closest-side, #383838 90%, #0000) 0% 50%,
     no-repeat radial-gradient(circle closest-side, #383838 90%, #0000) 50% 50%,
@@ -257,4 +278,43 @@ input.question-box:focus {
         calc(100%/3) 100%,
         calc(100%/3) 0;}    
 }
+
+@media (max-width: 600px) {
+    main {
+        width: 95vw; /* Increase width for better fit */
+        height: 90vh; /* Maximize available space */
+        padding: 15px; /* Reduce padding for tighter layout */
+    }
+
+    .starter-text {
+        padding: 0 10px;
+        font-size: 14px; /* Smaller text for better readability */
+        margin-top: 0; /* Reset margin for better spacing */
+    }
+
+    .prompt-suggestion-row {
+        flex-direction: column; /* Stack suggestions vertically */
+        gap: 8px;
+    }
+
+    .bubble{
+        margin: 10px 0px;  /* Reduce padding for tighter layout */
+        font-size: 14px; /* Smaller text for better readability */
+        
+    }
+
+
+    input.question-box {
+        width: 100%; /* Full width input for easier typing */
+    }
+
+    form{
+        padding-top: 10px;
+    }
+
+    .message-wrapper {
+        margin: 0px; /* Reduce margin for better spacing */
+    }
+}
+
 
