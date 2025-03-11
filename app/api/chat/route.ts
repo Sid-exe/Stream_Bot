@@ -48,7 +48,7 @@ export async function POST(req: Request){
 
         docContext = JSON.stringify(docsMap)
         } catch(err) {
-            console.log("error querying db")
+            console.error("error querying db",err)
             docContext = ""
         }
          
