@@ -3,7 +3,7 @@ import "./global.css";
 export const metadata = {
   title: "stream chatbot",
   description:
-    "Stream-Bot is a web app that generates text based on a given prompt using OpenAI's GPT-3 model.",
+    "Stream-Bot is a web app that generates text based on a given prompt using OpenAI's model.",
   icons: "/favicon.ico",
 };
 
