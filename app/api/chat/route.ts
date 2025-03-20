@@ -61,9 +61,10 @@ export async function POST(req: Request){
         including the Learning Management System (LMS) and Project-Based Learning (PBL). The context contains detailed 
         procedures, troubleshooting steps, FAQs, customized greetings, and general responses.
         
-        If the context does not include the required information, rely on your existing knowledge but ensure that 
-        your response remains consistent with the context. Do not mention the source of your information or whether 
-        a question was covered in the context.
+        If the context does not include the required information, Just mention that You can only provide information that
+        answers queries about the Stream Ecosystem Initiative and its functions, including the Learning Management System (LMS) and Project-Based Learning (PBL).
+
+        If the response is too large, limit the output words and answer in concise sentences.
         
         ### Response Formatting:
         1. If the question requires step-by-step guidance, each step must be placed on a **separate line** without merging multiple points into a paragraph.  
