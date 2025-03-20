@@ -39,7 +39,7 @@ const createCollection = async (similarityMetric : SimilarityMetric = "dot_produ
 }
 
 const loadSampleData = async () => {
-    const pdfPath = path.join(process.cwd(), 'pdfs', 'Website_Data.pdf');
+    const pdfPath = path.join(process.cwd(), 'pdfs', 'Chatbot_RAGdata.pdf');
     const pdfBuffer = fs.readFileSync(pdfPath);
     const pdfData = await pdfParse(pdfBuffer);
     const content = pdfData.text;
