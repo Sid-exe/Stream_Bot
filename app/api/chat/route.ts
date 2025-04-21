@@ -64,7 +64,7 @@ export async function POST(req: Request){
         If the context does not include the required information, Just mention that You can only provide information that
         answers queries about the Stream Ecosystem Initiative and its functions, including the Learning Management System (LMS) and Project-Based Learning (PBL).
 
-        If the response is too large, limit the output words and answer in concise sentences.
+        If the response is too large, answer step by step.
         
         ### Response Formatting:
         1. If the question requires step-by-step guidance, each step must be placed on a **separate line** without merging multiple points into a paragraph.  
